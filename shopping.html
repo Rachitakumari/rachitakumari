@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Website</title>
+    <meta charset="utf-8" name="viewport" content="width=device-width,initial-scale=1">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <style>
+       *{
+        margin:0%;
+        padding:0%;
+        font-family: 'Roboto',sans-serif;
+       }
+        body{
+            background-color:#eeee;
+        }
+
+        nav{
+            display:flex;
+            justify-content: space-between;
+            background-color:#eeee;
+            padding:16px;
+            box-shadow:0px 2px 2px 2px rgb(181, 179, 179);
+        }
+        nav .logo{
+            margin-left:22px;
+            font-size:24px;
+        }
+        ul{
+            margin-right:22px;
+            margin-top:7px;
+        }
+         nav ul li{
+            list-style:none;
+         }
+         ul li a{
+            margin-inline:22px;
+            font-size:20px;
+         }
+         ul li i{
+            font-size:22px;
+         }
+         ul li #home{
+            color:rgb(5, 161, 161);
+         }
+         /* ul li #home:hover{
+            border-bottom:2px solid rgb(5, 161, 161);
+            cursor:pointer;
+         } */
+         ul li a:hover{
+            border-bottom:2px solid black;
+            cursor:pointer;
+         }
+         ul li i:hover{
+            color:gray;
+            cursor:pointer;
+         }
+         .main {
+            display:flex;
+            justify-content:space-around;
+         }
+         .main .maintext{
+            margin-top:144px;
+         }
+         .main img{
+            width:40%;
+            height:40%;
+         }
+         .maintext h1{
+            font-size:54px;
+         }
+         .maintext .top{
+            color:rgb(8, 71, 71);
+         }
+         .maintext p{
+            margin-top:12px;
+         }
+         .maintext button{
+            width:145px;
+            height:40px;
+            background-color:rgb(30, 88, 88);
+            border:none;
+            font-size:22px;
+            color:white;
+         }
+         .maintext button:hover{
+            background-color:transparent;
+            border:2px solid rgb(30, 88, 88);
+            color:rgb(30, 88, 88);
+         }
+         .head{
+            text-align:center;
+            padding:33px;
+            margin-top:22px;
+         }
+         .head span{
+            color:rgb(10, 124, 124);
+         }
+         .card{
+            display:flex;
+            justify-content:center;
+         }
+         .card .cardtext{
+            width:300px;
+            height:500px;
+            background-color:#fff;
+            margin-inline:11px;
+         }
+        .cardtext img{
+            width:85%;
+            padding:22px;
+            border-radius:31px;
+        }
+        .cardtext:hover{
+            transition:0.6s ease;
+            width:325px;
+            height:525px;
+        }
+        .star{
+            text-align:center;
+        }
+        .star button{
+            width:130px;
+            height:33px;
+            border:none;
+            background-color:rgb(5, 131, 131);
+            color:white;
+            font-size:19px;
+            margin-top:7px;
+        }
+        .star i{
+            color:rgb(255, 149, 0);
+        }
+        .blog{
+            display: flex;
+            justify-content: center;
+            width:500px;
+            height:300px;
+            background-color:#fff;
+            border-radius:11px;
+            margin-inline:22px;
+        }
+        .blog:hover{
+            transition:0.6s ease;
+            width:520px;
+            height:320px;
+        }
+        .blog img{
+            padding:22px;
+          width:85%
+        }
+        .blogtext{
+            padding:22px;
+            margin-top:5px;
+        }
+        .blog a{
+            width:120px;
+            padding:4px;
+            height:18;
+            background-color:rgb(5, 131, 131);
+            text-decoration:none;
+            position:relative;
+            top:33px;
+            color:white;
+            font-size:18px;
+        }
+        .letter{
+            background-color:rgb(30, 88, 88);
+            display:flex;
+            color:white;
+            justify-content: space-between;
+            padding:42px;
+        }
+        .inp{
+           display:flex;
+        }
+        .inp input{
+            width:330px;
+            height:33px;
+            outline:none;
+            border:none;
+            font-size:18px;
+        }
+        .inp button{
+            width:100px;
+            height:33px;
+            border:none;
+            background-color:rgb(34, 184, 184);
+            color:white;
+            font-size:18px;
+        }
+        .footer{
+            display:flex;
+            justify-content: center;
+            padding:53px;
+        }
+        .footer .footertext{
+            margin-inline:85px;
+        }
+        .footer .footertext p{
+            margin-top:11px;
+        }
+        /* about */
+
+        .about{
+            display:none;
+        }
+        .aboutus{
+            background-color: rgb(38, 102, 102);
+            color:white;
+            padding:50px;
+            font-size:22px;
+        }
+        .know{
+            background-color: rgb(154, 212, 212);
+            width:1000px;
+            margin:6% 0 0 10%;
+            padding:22px;
+        }
+        .know img{
+          width:100%;
+          height:50vh;
+          padding:5px;
+        }
+         /* contact */
+
+         .contact{
+            display:none;
+         }
+         .contactus{
+            background-color: rgb(38, 102, 102);
+            color:white;
+            padding:50px;
+            font-size:22px;
+         }
+         .contactme{
+            display: flex;
+            justify-content: center;
+            width:1000px;
+            margin:2% 0 0 14%;
+            background-color: rgb(191, 238, 238);
+         }
+         .contactme img{
+            width:55%;
+         }
+         .contactme .text{
+            padding: 22px;
+            width:500px;
+         }
+         .contactme .text p{
+            margin:10%;
+         }
+         .form{
+            text-align:center;
+            margin-top:5%;
+         }
+         .form input{
+            width:300px;
+            height:33px;
+            margin-top: 11px;
+            padding:5px;
+         }
+         .form button{
+            width:300px;
+            height:36px;
+            margin-top:11px;
+            background-color:rgb(2, 44, 5);
+            color:white;
+            font-size:22px;
+            border:none;
+         }
+         .cart{
+            display: flex;
+            margin:25px;
+            justify-content: center;
+            display:none;
+         }
+         .carttext{
+            padding:22px;
+            margin-top:22px;
+         }
+         .carttext p{
+            margin-top:12px;
+         }
+         .carttext h2{
+            margin-top:11px;
+         }
+         .btn1{
+            width:140px;
+            height:40px;
+            background-color: rgb(255, 149, 0);
+            color:white;
+            border:none;
+            font-size:22px;
+            margin-inline:11px;
+            margin-top: 22px;
+         }
+         .btn2{
+            width:140px;
+            height:40px;
+            background-color: rgb(30, 88, 88);
+            color:white;
+            border:none;
+            font-size:22px;
+            margin-inline:11px;
+            margin-top: 22px;
+         }
+         .btn3{
+            width:140px;
+            height:40px;
+            background-color: rgb(30, 88, 88);
+            color:white;
+            border:none;
+            font-size:22px;
+            margin-inline:11px;
+            margin-top: 22px;
+         }
+    </style>
+    
+</head>
+<body>
+    <div class="content">
+        <nav>
+            <div class="logo">
+                <h1>Trends</h1>
+            </div>
+            <ul>
+                <li>
+                    <a id="home" onclick="home()">Home</a>
+                    <a id="shop" onclick="shop()">Shops</a>
+                    <a id="blog" onclick="blogs()">Blog</a>
+                    <a id="about" onclick="about()">About</a>
+                    <a id="contact" onclick="contact()">Contact</a>
+                    <a><i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <!-- mainpage -->
+
+        <div class="main">
+            <div class="maintext">
+                <h2>Trends</h2>
+                <h1 class="top">Super Deals <i class="fa fa-tag"></i></h1>
+                <h1>On All Products</h1>
+                <p>Hurry before stock runs out!</p><br>
+                <button>Explore</button>
+                </div>
+            <img src="C:\Users\Home\Desktop\E-commerce\img\shopping.png" alt="">
+        </div>
+
+           <!-- cards -->
+
+           <div class="trend">
+            <div class="head">
+                <h1>Trends <span>Men's Wear</span></h1>
+            </div>
+           
+            <div class="card">
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\shirt.jpeg" alt="" onclick="show(this)"> 
+                    <div class="star">
+                    <h2>Cotton Trending Shirt's</h2>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-stroke"></i><br>
+                    <button>Add to Cart</button></div>
+                </div>
+                 <!-- </div>
+                 <div class="card"> -->
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\shirt2.jpg" alt="" onclick="show(this)">
+                    <div class="star">
+                    <h2>Cotton Trending Shirt's</h2>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-stroke"></i><br>
+                        <button>Add to Cart</button></div>
+                </div>
+            <!-- </div>
+            <div class="card"> -->
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\tshirt.jpg" alt="" onclick="show(this)">
+                    <div class="star">
+                    <h2>Cotton Trending Shirt's</h2>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-stroke"></i><br>
+                        <button>Add to Cart</button></div>
+                </div>
+            </div>
+           </div>
+             
+           <!-- Women's card -->
+
+           <div class="trend" id="trendsec">
+            <div class="head">
+                <h1>Trends <span>Girls's Wear</span></h1>
+            </div>
+            <div class="card">
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\girl2.jpg" alt="" onclick="show(this)">
+                    <div class="star">
+                    <h2>Trending Girls's Top</h2>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-stroke"></i><br>
+                        <button>Add to Cart</button></div>
+                </div>
+            <!-- </div>
+            <div class="card"> -->
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\girl1.jpg" alt="" onclick="show(this)">
+                    <div class="star">
+                    <h2>Trending Girls's Top</h2>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-stroke"></i><br>
+                        <button>Add to Cart</button></div>
+                </div>
+            <!-- </div>
+            <div class="card"> -->
+                <div class="cardtext">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\girl4.jpg" alt="" onclick="show(this)">
+                    <div class="star">
+                    <h2>Trending Girls's Top</h2>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-stroke"></i><br>
+                        <button>Add to Cart</button></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- cart -->
+
+            <div class="cart">
+                <img id="newimg" src="" alt="">
+                <div class="carttext">
+                    <h1>Trends Offer: Trending Shop <br> Now</h1>
+                    <h2>Special Price</h2>
+                    <h2><del>Rs.1500</del> Rs.999</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                   
+                    <button class="btn1">Buy Now</button>
+                    <button class="btn2">Add to Cart</button><br>
+                  
+                   <button class="btn3">Back</button>
+                </div>
+            </div>
+
+            <!-- About us -->
+
+            <div class="about">
+                <div class="aboutus">
+                    <h1>Know more About us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+                 <div class="know">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\gf.jpg" alt="">
+                    <div class="text">
+                        <h1>Best Brand</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    </div>
+                 </div>
+            </div>
+
+            <!-- contact -->
+
+            <div class="contact">
+                <div class="contactus">
+                    <h1>#Lets Connect with Us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+                 <div class="contactme">
+                    <div class="text">
+                        <h1>Visit Our Office today.</h1>
+                        <p>Address: Lalupur Chawk,Ranchi,Jharkhand,India.</p>
+                        <p>Email: trends23@gmail.com</p>
+                        <p>Number: +123 4567 890</p>
+                    </div>
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\map.png" alt="">
+                 </div>
+                 <div class="form">
+                    <h1>Connect with Trends</h1>
+                    <input type="text" placeholder="Enter email"><br>
+                    <input type="text" placeholder="Enter Number"><br>
+                    <input type="text" placeholder="Enter Place"><br>
+                    <input type="text" placeholder="Enter Name"><br>
+                    <input type="text" placeholder="Enter Country"><br>
+                    <button>Submit</button>
+                 </div>
+            </div>
+
+            <!-- blogs -->
+
+            <div class="trends" id="trendth">
+                <div class="head">
+                    <h1>Trends <span>Clothes</span></h1>
+                </div>
+                <div class="card">
+                   <div class="blog">
+                    <img src="C:\Users\Home\Desktop\E-commerce\img\gf2.jpg" alt="">
+                    <div class="blogtext">
+                        <h2>Trending Girl's Clothes</h2><br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                            <a href="#">Read More</a>
+                        </div>
+                    </div>
+                    <div class="blog">
+                        <img src="C:\Users\Home\Desktop\E-commerce\img\bf.png" alt="">
+                        <div class="blogtext">
+                            <h2>Trending Boy's Clothes</h2><br>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                nostrud exercitation ullamco laboris nisi. </p>
+                                <a href="#">Read More</a>
+                            </div>
+                        </div>
+                   </div>
+                </div><br>
+
+                <!-- letter -->
+
+                <div class="letter">
+                    <div class="lettertext">
+                        <h1>Sign Up for NewsLetter</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                    <div class="inp">
+                        <input type ="text" placeholder="Enter Email">
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+
+                <div class="footer">
+                    <div class="footertext">
+                        <h2>Trends</h2>
+                        <p>Service</p>
+                        <p>Customer</p>
+                        <p>Satisfaction</p>
+                    </div>
+                    <div class="footertext">
+                        <h2>About Us</h2>
+                        <p>Address: Lorem ipsum dolor sit amet</p>
+                        <p>Service</p>
+                        <p>Customer</p>
+                        <p>Satisfaction</p>
+                    </div>
+                    <div class="footertext">
+                        <h2>Contact</h2>
+                        <p>+123 4567 567</p>
+                        <p>Customer</p>
+                        <p>Comming Up..</p>
+                        <p>New Arrival</p>
+                    </div>
+                    <div class="footertext">
+                        <h2>Trending</h2>
+                        <p>Service</p>
+                        <p>Customer</p>
+                        <p>Shops</p>
+                    </div>
+                </div>
+            </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script> -->
+    <script>
+       let card = document.querySelector('.trend');
+       console.log(card);
+       let card2 = document.getElementById('trendsec');
+       let aboutus = document.querySelector('.about');
+       let contactus = document.querySelector('.contact');
+       let mainPage = document.querySelector('.main');
+       let blog = document.querySelector('.trends');
+
+       function home()
+       {
+        mainPage.style.display='flex';
+        card.style.display='block';
+        card2.style.display='block';
+        blog.style.display='block';
+        aboutus.style.display="none";
+        contactus.style.display="none";
+        document.getElementById('home').style.color='rgb(5, 161, 161)';
+        document.getElementById('shop').style.color='black';
+        document.getElementById('blog').style.color='black';
+        document.getElementById('about').style.color='black';
+        document.getElementById('contact').style.color='black';
+       }
+       function shop()
+       {
+        mainPage.style.display='none';
+        blog.style.display='none';
+
+        document.getElementById('shop').style.color='rgb(5, 161, 161)';
+        document.getElementById('home').style.color='black';
+        document.getElementById('blog').style.color='black';
+        document.getElementById('about').style.color='black';
+        document.getElementById('contact').style.color='black';
+       }
+
+
+       function blogs()
+       {
+        mainPage.style.display='none';
+        card.style.display='none';
+        card2.style.display='none';
+        blog.style.display='block';
+
+        document.getElementById('blog').style.color='rgb(5, 161, 161)';
+        document.getElementById('home').style.color='black';
+        document.getElementById('about').style.color='black';
+        document.getElementById('contact').style.color='black';
+        document.getElementById('shop').style.color='black';
+        
+       }
+
+       function about()
+       {
+        mainPage.style.display='none';
+        card.style.display='none';
+        card2.style.display='none';
+        blog.style.display='none';
+        aboutus.style.display='block';
+
+        document.getElementById('about').style.color='rgb(5, 161, 161)';
+        document.getElementById('home').style.color='black';
+        document.getElementById('blog').style.color='black';
+        document.getElementById('contact').style.color='black';
+        document.getElementById('shop').style.color='black';
+        
+       }
+
+       function contact()
+       {
+        mainPage.style.display='none';
+        card.style.display='none';
+        card2.style.display='none';
+        blog.style.display='none';
+        aboutus.style.display='none';
+        contactus.style.display='block';
+
+        document.getElementById('contact').style.color='rgb(5, 161, 161)';
+        document.getElementById('home').style.color='black';
+        document.getElementById('blog').style.color='black';
+        document.getElementById('about').style.color='black';
+        document.getElementById('shop').style.color='black';
+        
+       }
+        
+    //    cart
+
+    function show(img){
+        let newimg=document.getElementById('newimg');
+        console.log(img);
+        newimg.src=img.src;
+         
+        mainPage.style.display='none';
+        card.style.display='none';
+        card2.style.display='none';
+        blog.style.display='none';
+        aboutus.style.display='none';
+        contactus.style.display='none';
+        document.querySelector('.cart').style.display='flex';
+    }
+    </script>
+    
+</body>
+</html>
